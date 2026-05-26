@@ -1,4 +1,4 @@
-name = "crud-api"
+name = "worker-api-acotizar"
 main = "src/index.ts"
 compatibility_date = "2026-05-26"
 

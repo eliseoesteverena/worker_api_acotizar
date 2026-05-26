@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://crud-api.acotizar_db.workers.dev",
+      "url": "https://worker-api-acotizar.acotizar_db.workers.dev",
       "description": "Production"
     }
   ],
