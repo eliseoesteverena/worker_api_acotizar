@@ -1,0 +1,586 @@
+{
+  "version": "1",
+  "generatedAt": "2026-05-25T23:55:44.796Z",
+  "tables": [
+    {
+      "name": "plans",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    },
+    {
+      "name": "limits_plan",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "plan_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "quote_persistence_limit",
+          "type": "INTEGER",
+          "nullable": true,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "export_options",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "links_quotes",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "0",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [
+        {
+          "column": "plan_id",
+          "refTable": "plans",
+          "refColumn": "id"
+        }
+      ],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    },
+    {
+      "name": "profiles",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "avatar_url",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "plan_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "free",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [
+        {
+          "column": "plan_id",
+          "refTable": "plans",
+          "refColumn": "id"
+        }
+      ],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    },
+    {
+      "name": "company",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "fiscal_data",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "logo_url",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    },
+    {
+      "name": "profile_company",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "profile_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "company_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "owner",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [
+        {
+          "column": "profile_id",
+          "refTable": "profiles",
+          "refColumn": "id"
+        },
+        {
+          "column": "company_id",
+          "refTable": "company",
+          "refColumn": "id"
+        }
+      ],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    },
+    {
+      "name": "quotes",
+      "primaryKey": "id",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "profile_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "company_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "number",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "draft",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "currency",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "ARS",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "link",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "0",
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": null,
+          "readonly": false,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false,
+          "autoIncrement": false,
+          "default": "(unixepoch())",
+          "readonly": true,
+          "hidden": false,
+          "deprecated": false,
+          "isNew": false
+        }
+      ],
+      "foreignKeys": [
+        {
+          "column": "profile_id",
+          "refTable": "profiles",
+          "refColumn": "id"
+        },
+        {
+          "column": "company_id",
+          "refTable": "company",
+          "refColumn": "id"
+        }
+      ],
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "deprecated": false,
+      "isNew": false,
+      "aiSuggestions": [],
+      "aiIssues": []
+    }
+  ]
+}

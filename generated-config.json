@@ -1,0 +1,368 @@
+{
+  "version": "1",
+  "generatedAt": "2026-05-26T00:03:07.455Z",
+  "database": {
+    "name": "acotizar_db"
+  },
+  "auth": {
+    "issuer": "https://dev-0z2lkf1fu6a4t6wl.us.auth0.com",
+    "audience": "https://acotizar.pages.dev/api",
+    "jwksUrl": "https://dev-0z2lkf1fu6a4t6wl.auth0.com/.well-known/jwks.json"
+  },
+  "cors": {
+    "origins": [
+      "https://acotizar.pages.dev/api"
+    ]
+  },
+  "pagination": {
+    "defaultLimit": 20,
+    "maxLimit": 100
+  },
+  "rateLimit": {
+    "enabled": false
+  },
+  "globalReadonly": false,
+  "docs": {
+    "enabled": true,
+    "auth": "public"
+  },
+  "tables": [
+    {
+      "name": "plans",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    },
+    {
+      "name": "limits_plan",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "plan_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "quote_persistence_limit",
+          "type": "INTEGER",
+          "nullable": true,
+          "isPK": false
+        },
+        {
+          "name": "export_options",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "links_quotes",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    },
+    {
+      "name": "profiles",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id",
+        "created_at",
+        "updated_at"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false
+        },
+        {
+          "name": "avatar_url",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false
+        },
+        {
+          "name": "plan_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    },
+    {
+      "name": "company",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id",
+        "created_at",
+        "updated_at"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "fiscal_data",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "logo_url",
+          "type": "TEXT",
+          "nullable": true,
+          "isPK": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    },
+    {
+      "name": "profile_company",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id",
+        "created_at"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "profile_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "company_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    },
+    {
+      "name": "quotes",
+      "enabled": true,
+      "readonly": false,
+      "hidden": false,
+      "searchable": true,
+      "sortable": true,
+      "filterable": true,
+      "softDelete": {
+        "enabled": false,
+        "column": null
+      },
+      "primaryKey": "id",
+      "hiddenColumns": [],
+      "readonlyColumns": [
+        "id",
+        "created_at",
+        "updated_at"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": true
+        },
+        {
+          "name": "profile_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "company_id",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "number",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "currency",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "link",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "nullable": false,
+          "isPK": false
+        }
+      ]
+    }
+  ]
+}
